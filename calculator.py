@@ -4,6 +4,27 @@
 #lasted modified :2020/03/04
 #version         :1.0
 #discription     :do some simple calculation
+def change(num, weight):
+if weight == 10:
+    print(int(num))
+    return
+new_num_ls = []
+while num > weight:
+    tmp = num % weight
+    num = num // weight
+    if tmp >= 10:
+        new_num_ls.append(_alph[tmp])
+    else:
+        new_num_ls.append(tmp)
+if num >= 10:
+    new_num_ls.append(_alph[num])
+else:
+    new_num_ls.append(num)
+length = len(new_num_ls)
+for i in range(length):
+    print(new_num_ls[length-i-1], end = "")
+print()
+
 alph = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15, 'G': 16,
         'H': 17, 'I': 18, 'J': 19, 'K': 20, 'L': 21, 'M': 22, 'N': 23,
         'O': 24, 'P': 25, 'Q': 26, 'R': 27, 'S': 28, 'T': 29, 'U': 30,
