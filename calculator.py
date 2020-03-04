@@ -25,6 +25,22 @@ for i in range(length):
     print(new_num_ls[length-i-1], end = "")
 print()
 
+def return_10(num, weight):
+if weight == 10:
+    return int(num)
+num_ls = list(num)
+length = len(num_ls)
+num_10 = 0
+k = 0
+for i in range(length):
+    x = num_ls[length-i-1]
+    if x in alph:
+        num_10 += alph[x] * pow(weight, k)
+    else:
+        num_10 += int(x)*pow(weight, k)
+    k += 1
+return num_10
+
 alph = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15, 'G': 16,
         'H': 17, 'I': 18, 'J': 19, 'K': 20, 'L': 21, 'M': 22, 'N': 23,
         'O': 24, 'P': 25, 'Q': 26, 'R': 27, 'S': 28, 'T': 29, 'U': 30,
