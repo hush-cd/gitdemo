@@ -18,3 +18,31 @@ num_order = int(input())
 cur_answer = 0
 operation = "" #0:null, 1:+，2:-, 3:*, 4:/, 5:%
 weight = 10
+for i in range(num_order):
+order = input()
+#print(order)
+if order == "ADD":
+    operation = "+"
+elif order == "SUB":
+    operation = "-"
+elif order == "MUL":
+    operation = "*"
+elif order == "DIV":
+    operation = "//"
+elif order == "MOD":
+    operation = "%"
+elif order == "EQUAL":
+    change(cur_answer, weight)
+elif order == "CLEAR":
+    cur_answer = 0
+    operation = ""
+else:
+    order, num = order.split()
+    if order == "CHANGE":
+        weight = int(num)
+    elif order == "NUM":
+        if operation != "":
+            cur_answer = eval(str(cur_answer)+operation+str(return_10(num, weight)))
+        else:
+            cur_answer = return_10(num, weight)
+
